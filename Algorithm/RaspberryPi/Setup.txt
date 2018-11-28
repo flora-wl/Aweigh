@@ -12,4 +12,8 @@ Clone the following repository for the QMC5883L magnetometer: https://github.com
 
 - Analog to Digital Converter:
 Install necessary drivers: https://learn.adafruit.com/raspberry-pi-analog-to-digital-converters/ads1015-slash-ads1115?fbclid=IwAR3ZssG41gnKDBnWwK6jNznTiN9v0c35AunUyOKwUxnS9rQzNCFoUKa_IeI 
+Commands are:
+sudo apt-get update
+sudo apt-get install build-essential python-dev python-smbus python-pip
+sudo pip install adafruit-ads1x15
 
