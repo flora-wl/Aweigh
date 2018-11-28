@@ -31,7 +31,7 @@ s2_array = [0,0,0,0,0,0,0,0,0,0]
 n = 180 # Arbitrary number for now
 
 # Define end time
-t_end = time.time() + 2
+t_end = time.time() + 10
 
 # Run program once for fixed amount of time
 while time.time() < t_end:
