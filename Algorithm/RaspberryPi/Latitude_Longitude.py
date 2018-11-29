@@ -78,6 +78,7 @@ while time.time() < t_end:
     
 # Calculate longitude
     longitude = omega - (UTI+E)*15+180
+    
 # Print latitude to console
     print(latitude)
     
