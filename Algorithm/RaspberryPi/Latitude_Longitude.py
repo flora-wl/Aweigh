@@ -1,4 +1,4 @@
-# This script outputs latitude to the console from polarisation analyser readings
+# This script outputs latitude and longitude to the console from polarisation analyser readings
 
 import time
 import math
@@ -29,6 +29,10 @@ s2_array = [0,0,0,0,0,0,0,0,0,0]
 
 # Date
 n = 180 # Arbitrary number for now
+
+# Time
+UTI = 10 # Arbitrary number for now
+E = 5 # Arbitrary number for now - E is the difference between the true solar hour and the mean solar hour
 
 # Define end time
 t_end = time.time() + 10
@@ -66,8 +70,16 @@ while time.time() < t_end:
 # Calculate declination
     d = 23.45*(pi/180)*math.sin(((2*pi)*(284+n))/36.25)
 
-# Calculate Latitude
+# Calculate Latitude (this part might need some changes - review the math)
     latitude = 2*math.atan((math.tan(h)/(math.cos(phi)+math.sin(d)*acos(h)))-((math.sqrt(math.cos(phi)**2-math.sin(d)**2*math.acos(h)**2+math.tan(h)**2)/(math.cos(phi)+math.sin(d)*acos(h)))))
 
+# Calculate hour angle
+    omega = math.asin((-math.cos(h)*math.sin(phi))/math.cos(d))
+    
+# Calculate longitude
+    longitude = omega - (UTI+E)*15+180
 # Print latitude to console
     print(latitude)
+    
+# Print longitudee to console
+    print(longitude)
